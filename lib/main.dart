@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'application/core/router/app_navigation_observer.dart';
-import 'application/core/router/app_router.dart';
+import 'package:oximapp_v2/presentation/core/router/app_navigation_observer.dart';
+import 'package:oximapp_v2/presentation/core/router/app_router.dart';
+
 import 'injection.dart';
 
 void main() {
