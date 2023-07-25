@@ -12,12 +12,13 @@
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'domain/sign_in/i_sign_in_data_source.dart' as _i4;
-import 'domain/sign_in/i_sign_in_facade.dart' as _i6;
-import 'infrastructure/sign_in/sign_in_data_source_impl.dart' as _i5;
-import 'infrastructure/sign_in/sign_in_facade_impl.dart' as _i7;
-import 'presentation/core/router/app_router.dart' as _i3;
-import 'presentation/core/router/auth_guard.dart' as _i8;
+import 'aplication/sign_in/sign_in_bloc.dart' as _i7;
+import 'domain/sign_in/i_sign_in_data_source.dart' as _i3;
+import 'domain/sign_in/i_sign_in_facade.dart' as _i5;
+import 'infrastructure/sign_in/sign_in_data_source_impl.dart' as _i4;
+import 'infrastructure/sign_in/sign_in_facade_impl.dart' as _i6;
+import 'presentation/core/router/app_router.dart' as _i8;
+import 'presentation/core/router/auth_guard.dart' as _i9;
 
 extension GetItInjectableX on _i1.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt
@@ -30,14 +31,15 @@ extension GetItInjectableX on _i1.GetIt {
       environment,
       environmentFilter,
     );
-    gh.singleton<_i3.AppRouter>(_i3.AppRouter());
-    await gh.factoryAsync<_i4.ISignInDataSource>(
-      () => _i5.SignInDataSourceImpl.init(),
+    await gh.factoryAsync<_i3.ISignInDataSource>(
+      () => _i4.SignInDataSourceImpl.init(),
       preResolve: true,
     );
-    gh.factory<_i6.ISignInFacade>(
-        () => _i7.SignInFacadeImpl(gh<_i4.ISignInDataSource>()));
-    gh.factory<_i8.AuthGuard>(() => _i8.AuthGuard(gh<_i6.ISignInFacade>()));
+    gh.factory<_i5.ISignInFacade>(
+        () => _i6.SignInFacadeImpl(gh<_i3.ISignInDataSource>()));
+    gh.factory<_i7.SignInBloc>(() => _i7.SignInBloc(gh<_i5.ISignInFacade>()));
+    gh.factory<_i8.AppRouter>(() => _i8.AppRouter(bloc: gh<_i7.SignInBloc>()));
+    gh.factory<_i9.AuthGuard>(() => _i9.AuthGuard(gh<_i7.SignInBloc>()));
     return this;
   }
 }

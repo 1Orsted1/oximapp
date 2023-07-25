@@ -1,18 +1,19 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:injectable/injectable.dart';
-import 'package:oximapp_v2/domain/sign_in/i_sign_in_facade.dart';
 import 'package:oximapp_v2/presentation/core/router/app_router.dart';
 
-@Injectable()
-class AuthGuard extends AutoRouteGuard {
-  AuthGuard(this._facade);
+import '../../../aplication/sign_in/sign_in_bloc.dart';
 
-  final ISignInFacade _facade;
+@injectable
+class AuthGuard extends AutoRouteGuard {
+  AuthGuard(this._bloc);
+
+  final SignInBloc _bloc;
 
   @override
   void onNavigation(NavigationResolver resolver, StackRouter router) {
     //final ISignInFacade _facade;
-    final status = _facade.getSignInStatus();
+    //final status = _bloc.getSignInStatus();
     // the navigation is paused until resolver.next() is called with either
     // true to resume/continue navigation or false to abort navigation
     if (false) {
