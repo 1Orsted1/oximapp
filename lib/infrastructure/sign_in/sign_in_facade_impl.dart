@@ -18,6 +18,4 @@ class SignInFacadeImpl extends ISignInFacade {
   bool setSignInStatus({required bool isLogged}) {
     return _source.setSignInStatus(isLogged: isLogged);
   }
-
-
 }

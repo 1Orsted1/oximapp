@@ -12,5 +12,5 @@ final getIt = GetIt.instance;
 )
 Future<void> configureDependencies() async {
   await Hive.initFlutter();
-  getIt.init();
+  await getIt.init();
 }

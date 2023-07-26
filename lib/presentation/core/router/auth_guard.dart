@@ -2,13 +2,14 @@ import 'package:auto_route/auto_route.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oximapp_v2/presentation/core/router/app_router.dart';
 
-import '../../../aplication/sign_in/sign_in_bloc.dart';
+import '../../../domain/sign_in/i_sign_in_facade.dart';
 
-@injectable
+// @Injectable(as: AutoRouteGuard)
+@lazySingleton
 class AuthGuard extends AutoRouteGuard {
-  AuthGuard(this._bloc);
+  AuthGuard(this.facade);
 
-  final SignInBloc _bloc;
+  final ISignInFacade facade;
 
   @override
   void onNavigation(NavigationResolver resolver, StackRouter router) {

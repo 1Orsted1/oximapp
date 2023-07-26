@@ -1,5 +1,4 @@
-
-abstract class ISignInFacade{
+abstract class ISignInFacade {
   bool getSignInStatus();
   bool setSignInStatus({required bool isLogged});
 }
