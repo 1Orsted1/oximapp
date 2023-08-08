@@ -38,8 +38,7 @@ extension GetItInjectableX on _i1.GetIt {
     gh.factory<_i5.ISignInFacade>(
         () => _i6.SignInFacadeImpl(gh<_i3.ISignInDataSource>()));
     gh.factory<_i7.SignInBloc>(() => _i7.SignInBloc(gh<_i5.ISignInFacade>()));
-    gh.lazySingleton<_i8.AuthGuard>(
-        () => _i8.AuthGuard(gh<_i5.ISignInFacade>()));
+    gh.factory<_i8.AuthGuard>(() => _i8.AuthGuard(gh<_i7.SignInBloc>()));
     gh.factory<_i9.AppRouter>(
         () => _i9.AppRouter(authGuard: gh<_i8.AuthGuard>()));
     return this;

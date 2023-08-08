@@ -1,23 +1,23 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:injectable/injectable.dart';
+import 'package:oximapp_v2/aplication/sign_in/sign_in_bloc.dart';
 import 'package:oximapp_v2/presentation/core/router/app_router.dart';
 
-import '../../../domain/sign_in/i_sign_in_facade.dart';
+@injectable
+class AuthGuard implements AutoRouteGuard {
+  AuthGuard(this.signIn);
 
-// @Injectable(as: AutoRouteGuard)
-@lazySingleton
-class AuthGuard extends AutoRouteGuard {
-  AuthGuard(this.facade);
-
-  final ISignInFacade facade;
+  final SignInBloc signIn;
 
   @override
-  void onNavigation(NavigationResolver resolver, StackRouter router) {
+  void onNavigation(NavigationResolver resolver, StackRouter router) async {
     //final ISignInFacade _facade;
-    //final status = _bloc.getSignInStatus();
+    signIn.add(const SignInEvent.getSignInStatus());
+    final userIsLogged = signIn.state.isLogged;
+    print("user status guard: $userIsLogged");
     // the navigation is paused until resolver.next() is called with either
     // true to resume/continue navigation or false to abort navigation
-    if (false) {
+    if (userIsLogged!) {
       // if user is authenticated we continue
       resolver.next(true);
     } else {

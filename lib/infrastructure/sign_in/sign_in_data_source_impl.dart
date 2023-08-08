@@ -22,8 +22,7 @@ class SignInDataSourceImpl implements ISignInDataSource {
   }
 
   @override
-  bool setSignInStatus({required bool isLogged}) {
+  Future<void> setSignInStatus({required bool isLogged}) async {
     _box.put(_signInBoxKey, isLogged);
-    return isLogged;
   }
 }

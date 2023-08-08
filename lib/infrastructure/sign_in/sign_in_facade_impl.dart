@@ -11,11 +11,11 @@ class SignInFacadeImpl extends ISignInFacade {
 
   @override
   bool getSignInStatus() {
-    return getSignInStatus();
+    return _source.getSignInStatus();
   }
 
   @override
-  bool setSignInStatus({required bool isLogged}) {
-    return _source.setSignInStatus(isLogged: isLogged);
+  Future<void> setSignInStatus({required bool isLogged}) async {
+    _source.setSignInStatus(isLogged: isLogged);
   }
 }

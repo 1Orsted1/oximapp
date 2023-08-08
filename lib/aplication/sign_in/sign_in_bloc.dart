@@ -9,12 +9,21 @@ part 'sign_in_bloc.freezed.dart';
 
 @injectable
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
-  SignInBloc(ISignInFacade _facade)
-      : super(SignInState.initialTest(isLogged: _facade.getSignInStatus())
-            //_Initial()
-            ) {
-    on<SignInEvent>((event, emit) {
-      // TODO: implement event handler
+  SignInBloc(ISignInFacade facade)
+      : super(SignInState.initialTest(isLogged: facade.getSignInStatus())) {
+    on<_getSignInStatus>((event, emit) async {
+      try {
+        final status = facade.getSignInStatus();
+        print('sign in status: $status');
+        emit(state.copyWith(isLogged: status));
+      } catch (e) {}
+    });
+    //_setSignInStatus
+    on<_setSignInStatus>((event, emit) async {
+      try {
+        final status = await facade.setSignInStatus(isLogged: event.isLogged);
+        emit(state.copyWith(isLogged: event.isLogged));
+      } catch (e) {}
     });
   }
 }

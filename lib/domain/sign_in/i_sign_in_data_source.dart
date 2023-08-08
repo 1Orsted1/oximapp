@@ -1,4 +1,4 @@
-abstract class ISignInDataSource{
-    bool getSignInStatus();
-    bool setSignInStatus({required bool isLogged});
+abstract class ISignInDataSource {
+  bool getSignInStatus();
+  Future<void> setSignInStatus({required bool isLogged});
 }
