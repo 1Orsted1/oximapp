@@ -9,6 +9,7 @@ import 'injection.dart';
 Future<void> main() async {
   await configureDependencies();
   final appRouter = getIt<AppRouter>();
+  final signInBloc = getIt<SignInBloc>();
   runApp(MultiBlocProvider(
     providers: [
       BlocProvider<SignInBloc>(
