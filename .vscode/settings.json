@@ -1,0 +1,14 @@
+{
+  "dart.flutterSdkPath": ".fvm/flutter_sdk",
+  "spellright.language": ["es", "en"],
+  "spellright.documentTypes": ["markdown", "latex", "plaintext", "json"],
+  "search.followSymlinks": false,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.fvm": true
+  },
+  "search.exclude": {
+    "**/.git": true,
+    "**/.fvm": true
+  }
+}
