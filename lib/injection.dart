@@ -5,11 +5,7 @@ import 'injection.config.dart';
 
 final getIt = GetIt.instance;
 
-@InjectableInit(
-  initializerName: 'init', // default
-  preferRelativeImports: true, // default
-  asExtension: true, // default
-)
+@InjectableInit()
 Future<void> configureDependencies() async {
   await Hive.initFlutter();
   await getIt.init();

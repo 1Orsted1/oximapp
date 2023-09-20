@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:l/l.dart';
 
 import '../../core/presentation/app_router.dart';
+import '../../i18n/strings.g.dart';
 import '../application/sign_in_bloc.dart';
 
 @RoutePage()
@@ -12,6 +13,7 @@ class SignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = Translations.of(context);
     final auth = context.watch<SignInBloc>();
     return BlocListener<SignInBloc, SignInState>(
       listener: (context, state) {
@@ -23,7 +25,7 @@ class SignInScreen extends StatelessWidget {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: const Text("Sign In"),
+          title: Text(t.login.title),
         ),
         body: Column(
           children: [

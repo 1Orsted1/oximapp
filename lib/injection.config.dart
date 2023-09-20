@@ -11,14 +11,15 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
-
-import 'core/presentation/app_router.dart' as _i9;
-import 'core/presentation/auth_guard.dart' as _i8;
-import 'sign_in/application/sign_in_bloc.dart' as _i7;
-import 'sign_in/domain/i_sign_in_data_source.dart' as _i3;
-import 'sign_in/domain/i_sign_in_facade.dart' as _i5;
-import 'sign_in/infraestructure/sign_in_data_source_impl.dart' as _i4;
-import 'sign_in/infraestructure/sign_in_facade_impl.dart' as _i6;
+import 'package:oximapp_v2/core/presentation/app_router.dart' as _i9;
+import 'package:oximapp_v2/core/presentation/auth_guard.dart' as _i8;
+import 'package:oximapp_v2/sign_in/application/sign_in_bloc.dart' as _i7;
+import 'package:oximapp_v2/sign_in/domain/i_sign_in_data_source.dart' as _i3;
+import 'package:oximapp_v2/sign_in/domain/i_sign_in_facade.dart' as _i5;
+import 'package:oximapp_v2/sign_in/infraestructure/sign_in_data_source_impl.dart'
+    as _i4;
+import 'package:oximapp_v2/sign_in/infraestructure/sign_in_facade_impl.dart'
+    as _i6;
 
 extension GetItInjectableX on _i1.GetIt {
   // initializes the registration of main-scope dependencies inside of GetIt

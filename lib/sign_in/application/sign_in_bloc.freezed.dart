@@ -389,7 +389,7 @@ class __$$_SignInStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SignInState implements _SignInState {
-  const _$_SignInState({required this.isLogged});
+  const _$_SignInState({this.isLogged});
 
   @override
   final bool? isLogged;
@@ -419,7 +419,7 @@ class _$_SignInState implements _SignInState {
 }
 
 abstract class _SignInState implements SignInState {
-  const factory _SignInState({required final bool? isLogged}) = _$_SignInState;
+  const factory _SignInState({final bool? isLogged}) = _$_SignInState;
 
   @override
   bool? get isLogged;

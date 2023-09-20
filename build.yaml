@@ -1,0 +1,21 @@
+targets:
+  $default:
+    builders:
+      slang_build_runner:
+        options:
+          base_locale: es
+      auto_route_generator:auto_route_generator:
+        options:
+          enable_cached_builds: true
+        generate_for:
+          - lib/**/presentation/*_screen.dart
+          - lib/**/presentation/*_page.dart
+      auto_route_generator:auto_router_generator:
+        options:
+          enable_cached_builds: true
+        generate_for:
+          - lib/core/presentation/app_router.dart
+      # freezed:
+      # options:
+      #   map: false
+      #   when: false
