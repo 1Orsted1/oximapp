@@ -1,25 +1,30 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:injectable/injectable.dart';
-import 'package:oximapp_v2/presentation/sign_in/sign_up_screen.dart';
-import 'package:oximapp_v2/presentation/sign_up/sign_in_screen.dart';
-import '../../home/home_screen.dart';
 
+import '../../dashboard/presentation/home_screen.dart';
+import '../../sign_in/presentation/sign_in_screen.dart';
+import '../../sign_up/presentation/sign_up_screen.dart';
+import 'auth_guard.dart';
 
 part 'app_router.gr.dart';
 
-@singleton
+@injectable
 @AutoRouterConfig(replaceInRouteName: 'Screen,Route')
 class AppRouter extends _$AppRouter {
-  AppRouter();
+  AppRouter({required this.authGuard});
+  final AuthGuard authGuard;
+  @override
+  RouteType get defaultRouteType => const RouteType.adaptive();
+
   @override
   List<AutoRoute> get routes => [
         AutoRoute(page: SignUpRoute.page),
         AutoRoute(page: SignInRoute.page),
         AutoRoute(
           page: HomeRoute.page,
-          guards: [],
+          //guards: [getIt<AuthGuard>()],
+          guards: [authGuard],
           initial: true,
         ),
       ];
-
 }

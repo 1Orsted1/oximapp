@@ -1,6 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
-
+import 'package:hive_flutter/hive_flutter.dart';
 import 'injection.config.dart';
 
 final getIt = GetIt.instance;
@@ -10,4 +10,7 @@ final getIt = GetIt.instance;
   preferRelativeImports: true, // default
   asExtension: true, // default
 )
-void configureDependencies() => getIt.init();
+Future<void> configureDependencies() async {
+  await Hive.initFlutter();
+  await getIt.init();
+}
