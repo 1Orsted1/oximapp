@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/presentation/app_router.dart';
-import '../../sign_in/application/sign_in_bloc.dart';
+import '../../user_selection/application/user_selection_bloc.dart';
 
 @RoutePage()
 class HomeScreen extends StatefulWidget {
@@ -20,12 +20,12 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       _counter++;
     });
-    context.router.push(const SignUpRoute());
+    context.router.push(const UserRegisterRoute());
   }
 
   @override
   Widget build(BuildContext context) {
-    final signIn = context.watch<SignInBloc>();
+    final signIn = context.watch<UserSelectionBloc>();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -34,9 +34,9 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           IconButton(
             onPressed: () {
-              signIn.add(const SignInEvent.setSignInStatus(isLogged: false));
-              context.router.replace(const SignInRoute());
-              //todo add a notifier
+              signIn.add(
+                  const UserSelectionEvent.setSignInStatus(isLogged: false));
+              context.router.replace(const UserSelectionRoute());
             },
             icon: const Icon(Icons.exit_to_app),
           )

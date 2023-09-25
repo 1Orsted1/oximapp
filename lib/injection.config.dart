@@ -13,12 +13,15 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 import 'package:oximapp_v2/core/presentation/app_router.dart' as _i9;
 import 'package:oximapp_v2/core/presentation/auth_guard.dart' as _i8;
-import 'package:oximapp_v2/sign_in/application/sign_in_bloc.dart' as _i7;
-import 'package:oximapp_v2/sign_in/domain/i_sign_in_data_source.dart' as _i3;
-import 'package:oximapp_v2/sign_in/domain/i_sign_in_facade.dart' as _i5;
-import 'package:oximapp_v2/sign_in/infraestructure/sign_in_data_source_impl.dart'
+import 'package:oximapp_v2/user_selection/application/user_selection_bloc.dart'
+    as _i7;
+import 'package:oximapp_v2/user_selection/domain/i_user_selection_data_source.dart'
+    as _i3;
+import 'package:oximapp_v2/user_selection/domain/i_user_selection_facade.dart'
+    as _i5;
+import 'package:oximapp_v2/user_selection/infraestructure/sign_in_data_source_impl.dart'
     as _i4;
-import 'package:oximapp_v2/sign_in/infraestructure/sign_in_facade_impl.dart'
+import 'package:oximapp_v2/user_selection/infraestructure/sign_in_facade_impl.dart'
     as _i6;
 
 extension GetItInjectableX on _i1.GetIt {
@@ -32,17 +35,17 @@ extension GetItInjectableX on _i1.GetIt {
       environment,
       environmentFilter,
     );
-    await gh.factoryAsync<_i3.ISignInDataSource>(
-      () => _i4.SignInDataSourceImpl.init(),
+    await gh.factoryAsync<_i3.IUserSelectionDataSource>(
+      () => _i4.UserSelectionDataSourceImpl.init(),
       preResolve: true,
     );
-    gh.factory<_i5.ISignInFacade>(
-        () => _i6.SignInFacadeImpl(gh<_i3.ISignInDataSource>()));
-    gh.factory<_i7.SignInBloc>(
-        () => _i7.SignInBloc(gh<_i5.ISignInFacade>())..init());
+    gh.factory<_i5.IUserSelectionFacade>(
+        () => _i6.SignInFacadeImpl(gh<_i3.IUserSelectionDataSource>()));
+    gh.factory<_i7.UserSelectionBloc>(
+        () => _i7.UserSelectionBloc(gh<_i5.IUserSelectionFacade>())..init());
     gh.factory<_i8.AuthGuard>(() => _i8.AuthGuard(
-          gh<_i7.SignInBloc>(),
-          gh<_i5.ISignInFacade>(),
+          gh<_i7.UserSelectionBloc>(),
+          gh<_i5.IUserSelectionFacade>(),
         ));
     gh.factory<_i9.AppRouter>(
         () => _i9.AppRouter(authGuard: gh<_i8.AuthGuard>()));

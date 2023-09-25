@@ -5,17 +5,17 @@ import 'package:l/l.dart';
 
 import '../../core/presentation/app_router.dart';
 import '../../i18n/strings.g.dart';
-import '../application/sign_in_bloc.dart';
+import '../application/user_selection_bloc.dart';
 
 @RoutePage()
-class SignInScreen extends StatelessWidget {
-  const SignInScreen({super.key});
+class UserSelectionScreen extends StatelessWidget {
+  const UserSelectionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     final t = Translations.of(context);
-    final auth = context.watch<SignInBloc>();
-    return BlocListener<SignInBloc, SignInState>(
+    final auth = context.watch<UserSelectionBloc>();
+    return BlocListener<UserSelectionBloc, UserSelectionState>(
       listener: (context, state) {
         l.d("h");
         if (state.isLogged! == true) {
@@ -33,7 +33,8 @@ class SignInScreen extends StatelessWidget {
               child: ElevatedButton(
                   onPressed: () {
                     l.d("pressed");
-                    auth.add(const SignInEvent.setSignInStatus(isLogged: true));
+                    auth.add(const UserSelectionEvent.setSignInStatus(
+                        isLogged: true));
                     l.d("pressed2");
                     //context.router.replace(const HomeRoute());
                   },
@@ -41,7 +42,7 @@ class SignInScreen extends StatelessWidget {
             ),
             TextButton(
                 onPressed: () {
-                  context.router.push(const SignUpRoute());
+                  context.router.push(const UserRegisterRoute());
                 },
                 child: const Text("registrarse"))
           ],

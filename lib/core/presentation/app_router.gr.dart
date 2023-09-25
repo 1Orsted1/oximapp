@@ -15,39 +15,25 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
-    SignInRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const SignInScreen(),
-      );
-    },
     HomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const HomeScreen(),
       );
     },
-    SignUpRoute.name: (routeData) {
+    UserRegisterRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const SignUpScreen(),
+        child: const UserRegisterScreen(),
+      );
+    },
+    UserSelectionRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const UserSelectionScreen(),
       );
     },
   };
-}
-
-/// generated route for
-/// [SignInScreen]
-class SignInRoute extends PageRouteInfo<void> {
-  const SignInRoute({List<PageRouteInfo>? children})
-      : super(
-          SignInRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'SignInRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -65,15 +51,29 @@ class HomeRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [SignUpScreen]
-class SignUpRoute extends PageRouteInfo<void> {
-  const SignUpRoute({List<PageRouteInfo>? children})
+/// [UserRegisterScreen]
+class UserRegisterRoute extends PageRouteInfo<void> {
+  const UserRegisterRoute({List<PageRouteInfo>? children})
       : super(
-          SignUpRoute.name,
+          UserRegisterRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'SignUpRoute';
+  static const String name = 'UserRegisterRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [UserSelectionScreen]
+class UserSelectionRoute extends PageRouteInfo<void> {
+  const UserSelectionRoute({List<PageRouteInfo>? children})
+      : super(
+          UserSelectionRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'UserSelectionRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

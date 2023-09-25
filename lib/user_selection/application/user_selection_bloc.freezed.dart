@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'sign_in_bloc.dart';
+part of 'user_selection_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$SignInEvent {
+mixin _$UserSelectionEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getSignInStatus,
@@ -37,36 +37,36 @@ mixin _$SignInEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_getSignInStatus value) getSignInStatus,
-    required TResult Function(_setSignInStatus value) setSignInStatus,
+    required TResult Function(_getSelectedUser value) getSignInStatus,
+    required TResult Function(_setSelectedUser value) setSignInStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_getSignInStatus value)? getSignInStatus,
-    TResult? Function(_setSignInStatus value)? setSignInStatus,
+    TResult? Function(_getSelectedUser value)? getSignInStatus,
+    TResult? Function(_setSelectedUser value)? setSignInStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_getSignInStatus value)? getSignInStatus,
-    TResult Function(_setSignInStatus value)? setSignInStatus,
+    TResult Function(_getSelectedUser value)? getSignInStatus,
+    TResult Function(_setSelectedUser value)? setSignInStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SignInEventCopyWith<$Res> {
-  factory $SignInEventCopyWith(
-          SignInEvent value, $Res Function(SignInEvent) then) =
-      _$SignInEventCopyWithImpl<$Res, SignInEvent>;
+abstract class $UserSelectionEventCopyWith<$Res> {
+  factory $UserSelectionEventCopyWith(
+          UserSelectionEvent value, $Res Function(UserSelectionEvent) then) =
+      _$UserSelectionEventCopyWithImpl<$Res, UserSelectionEvent>;
 }
 
 /// @nodoc
-class _$SignInEventCopyWithImpl<$Res, $Val extends SignInEvent>
-    implements $SignInEventCopyWith<$Res> {
-  _$SignInEventCopyWithImpl(this._value, this._then);
+class _$UserSelectionEventCopyWithImpl<$Res, $Val extends UserSelectionEvent>
+    implements $UserSelectionEventCopyWith<$Res> {
+  _$UserSelectionEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -75,35 +75,35 @@ class _$SignInEventCopyWithImpl<$Res, $Val extends SignInEvent>
 }
 
 /// @nodoc
-abstract class _$$_getSignInStatusCopyWith<$Res> {
-  factory _$$_getSignInStatusCopyWith(
-          _$_getSignInStatus value, $Res Function(_$_getSignInStatus) then) =
-      __$$_getSignInStatusCopyWithImpl<$Res>;
+abstract class _$$_getSelectedUserCopyWith<$Res> {
+  factory _$$_getSelectedUserCopyWith(
+          _$_getSelectedUser value, $Res Function(_$_getSelectedUser) then) =
+      __$$_getSelectedUserCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_getSignInStatusCopyWithImpl<$Res>
-    extends _$SignInEventCopyWithImpl<$Res, _$_getSignInStatus>
-    implements _$$_getSignInStatusCopyWith<$Res> {
-  __$$_getSignInStatusCopyWithImpl(
-      _$_getSignInStatus _value, $Res Function(_$_getSignInStatus) _then)
+class __$$_getSelectedUserCopyWithImpl<$Res>
+    extends _$UserSelectionEventCopyWithImpl<$Res, _$_getSelectedUser>
+    implements _$$_getSelectedUserCopyWith<$Res> {
+  __$$_getSelectedUserCopyWithImpl(
+      _$_getSelectedUser _value, $Res Function(_$_getSelectedUser) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_getSignInStatus implements _getSignInStatus {
-  const _$_getSignInStatus();
+class _$_getSelectedUser implements _getSelectedUser {
+  const _$_getSelectedUser();
 
   @override
   String toString() {
-    return 'SignInEvent.getSignInStatus()';
+    return 'UserSelectionEvent.getSignInStatus()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_getSignInStatus);
+        (other.runtimeType == runtimeType && other is _$_getSelectedUser);
   }
 
   @override
@@ -143,8 +143,8 @@ class _$_getSignInStatus implements _getSignInStatus {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_getSignInStatus value) getSignInStatus,
-    required TResult Function(_setSignInStatus value) setSignInStatus,
+    required TResult Function(_getSelectedUser value) getSignInStatus,
+    required TResult Function(_setSelectedUser value) setSignInStatus,
   }) {
     return getSignInStatus(this);
   }
@@ -152,8 +152,8 @@ class _$_getSignInStatus implements _getSignInStatus {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_getSignInStatus value)? getSignInStatus,
-    TResult? Function(_setSignInStatus value)? setSignInStatus,
+    TResult? Function(_getSelectedUser value)? getSignInStatus,
+    TResult? Function(_setSelectedUser value)? setSignInStatus,
   }) {
     return getSignInStatus?.call(this);
   }
@@ -161,8 +161,8 @@ class _$_getSignInStatus implements _getSignInStatus {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_getSignInStatus value)? getSignInStatus,
-    TResult Function(_setSignInStatus value)? setSignInStatus,
+    TResult Function(_getSelectedUser value)? getSignInStatus,
+    TResult Function(_setSelectedUser value)? setSignInStatus,
     required TResult orElse(),
   }) {
     if (getSignInStatus != null) {
@@ -172,25 +172,25 @@ class _$_getSignInStatus implements _getSignInStatus {
   }
 }
 
-abstract class _getSignInStatus implements SignInEvent {
-  const factory _getSignInStatus() = _$_getSignInStatus;
+abstract class _getSelectedUser implements UserSelectionEvent {
+  const factory _getSelectedUser() = _$_getSelectedUser;
 }
 
 /// @nodoc
-abstract class _$$_setSignInStatusCopyWith<$Res> {
-  factory _$$_setSignInStatusCopyWith(
-          _$_setSignInStatus value, $Res Function(_$_setSignInStatus) then) =
-      __$$_setSignInStatusCopyWithImpl<$Res>;
+abstract class _$$_setSelectedUserCopyWith<$Res> {
+  factory _$$_setSelectedUserCopyWith(
+          _$_setSelectedUser value, $Res Function(_$_setSelectedUser) then) =
+      __$$_setSelectedUserCopyWithImpl<$Res>;
   @useResult
   $Res call({bool isLogged});
 }
 
 /// @nodoc
-class __$$_setSignInStatusCopyWithImpl<$Res>
-    extends _$SignInEventCopyWithImpl<$Res, _$_setSignInStatus>
-    implements _$$_setSignInStatusCopyWith<$Res> {
-  __$$_setSignInStatusCopyWithImpl(
-      _$_setSignInStatus _value, $Res Function(_$_setSignInStatus) _then)
+class __$$_setSelectedUserCopyWithImpl<$Res>
+    extends _$UserSelectionEventCopyWithImpl<$Res, _$_setSelectedUser>
+    implements _$$_setSelectedUserCopyWith<$Res> {
+  __$$_setSelectedUserCopyWithImpl(
+      _$_setSelectedUser _value, $Res Function(_$_setSelectedUser) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -198,7 +198,7 @@ class __$$_setSignInStatusCopyWithImpl<$Res>
   $Res call({
     Object? isLogged = null,
   }) {
-    return _then(_$_setSignInStatus(
+    return _then(_$_setSelectedUser(
       isLogged: null == isLogged
           ? _value.isLogged
           : isLogged // ignore: cast_nullable_to_non_nullable
@@ -209,22 +209,22 @@ class __$$_setSignInStatusCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_setSignInStatus implements _setSignInStatus {
-  const _$_setSignInStatus({required this.isLogged});
+class _$_setSelectedUser implements _setSelectedUser {
+  const _$_setSelectedUser({required this.isLogged});
 
   @override
   final bool isLogged;
 
   @override
   String toString() {
-    return 'SignInEvent.setSignInStatus(isLogged: $isLogged)';
+    return 'UserSelectionEvent.setSignInStatus(isLogged: $isLogged)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_setSignInStatus &&
+            other is _$_setSelectedUser &&
             (identical(other.isLogged, isLogged) ||
                 other.isLogged == isLogged));
   }
@@ -235,8 +235,8 @@ class _$_setSignInStatus implements _setSignInStatus {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_setSignInStatusCopyWith<_$_setSignInStatus> get copyWith =>
-      __$$_setSignInStatusCopyWithImpl<_$_setSignInStatus>(this, _$identity);
+  _$$_setSelectedUserCopyWith<_$_setSelectedUser> get copyWith =>
+      __$$_setSelectedUserCopyWithImpl<_$_setSelectedUser>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -272,8 +272,8 @@ class _$_setSignInStatus implements _setSignInStatus {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_getSignInStatus value) getSignInStatus,
-    required TResult Function(_setSignInStatus value) setSignInStatus,
+    required TResult Function(_getSelectedUser value) getSignInStatus,
+    required TResult Function(_setSelectedUser value) setSignInStatus,
   }) {
     return setSignInStatus(this);
   }
@@ -281,8 +281,8 @@ class _$_setSignInStatus implements _setSignInStatus {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_getSignInStatus value)? getSignInStatus,
-    TResult? Function(_setSignInStatus value)? setSignInStatus,
+    TResult? Function(_getSelectedUser value)? getSignInStatus,
+    TResult? Function(_setSelectedUser value)? setSignInStatus,
   }) {
     return setSignInStatus?.call(this);
   }
@@ -290,8 +290,8 @@ class _$_setSignInStatus implements _setSignInStatus {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_getSignInStatus value)? getSignInStatus,
-    TResult Function(_setSignInStatus value)? setSignInStatus,
+    TResult Function(_getSelectedUser value)? getSignInStatus,
+    TResult Function(_setSelectedUser value)? setSignInStatus,
     required TResult orElse(),
   }) {
     if (setSignInStatus != null) {
@@ -301,38 +301,38 @@ class _$_setSignInStatus implements _setSignInStatus {
   }
 }
 
-abstract class _setSignInStatus implements SignInEvent {
-  const factory _setSignInStatus({required final bool isLogged}) =
-      _$_setSignInStatus;
+abstract class _setSelectedUser implements UserSelectionEvent {
+  const factory _setSelectedUser({required final bool isLogged}) =
+      _$_setSelectedUser;
 
   bool get isLogged;
   @JsonKey(ignore: true)
-  _$$_setSignInStatusCopyWith<_$_setSignInStatus> get copyWith =>
+  _$$_setSelectedUserCopyWith<_$_setSelectedUser> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$SignInState {
+mixin _$UserSelectionState {
   bool? get isLogged => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SignInStateCopyWith<SignInState> get copyWith =>
+  $UserSelectionStateCopyWith<UserSelectionState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SignInStateCopyWith<$Res> {
-  factory $SignInStateCopyWith(
-          SignInState value, $Res Function(SignInState) then) =
-      _$SignInStateCopyWithImpl<$Res, SignInState>;
+abstract class $UserSelectionStateCopyWith<$Res> {
+  factory $UserSelectionStateCopyWith(
+          UserSelectionState value, $Res Function(UserSelectionState) then) =
+      _$UserSelectionStateCopyWithImpl<$Res, UserSelectionState>;
   @useResult
   $Res call({bool? isLogged});
 }
 
 /// @nodoc
-class _$SignInStateCopyWithImpl<$Res, $Val extends SignInState>
-    implements $SignInStateCopyWith<$Res> {
-  _$SignInStateCopyWithImpl(this._value, this._then);
+class _$UserSelectionStateCopyWithImpl<$Res, $Val extends UserSelectionState>
+    implements $UserSelectionStateCopyWith<$Res> {
+  _$UserSelectionStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -354,22 +354,22 @@ class _$SignInStateCopyWithImpl<$Res, $Val extends SignInState>
 }
 
 /// @nodoc
-abstract class _$$_SignInStateCopyWith<$Res>
-    implements $SignInStateCopyWith<$Res> {
-  factory _$$_SignInStateCopyWith(
-          _$_SignInState value, $Res Function(_$_SignInState) then) =
-      __$$_SignInStateCopyWithImpl<$Res>;
+abstract class _$$_UserSelectionStateCopyWith<$Res>
+    implements $UserSelectionStateCopyWith<$Res> {
+  factory _$$_UserSelectionStateCopyWith(_$_UserSelectionState value,
+          $Res Function(_$_UserSelectionState) then) =
+      __$$_UserSelectionStateCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({bool? isLogged});
 }
 
 /// @nodoc
-class __$$_SignInStateCopyWithImpl<$Res>
-    extends _$SignInStateCopyWithImpl<$Res, _$_SignInState>
-    implements _$$_SignInStateCopyWith<$Res> {
-  __$$_SignInStateCopyWithImpl(
-      _$_SignInState _value, $Res Function(_$_SignInState) _then)
+class __$$_UserSelectionStateCopyWithImpl<$Res>
+    extends _$UserSelectionStateCopyWithImpl<$Res, _$_UserSelectionState>
+    implements _$$_UserSelectionStateCopyWith<$Res> {
+  __$$_UserSelectionStateCopyWithImpl(
+      _$_UserSelectionState _value, $Res Function(_$_UserSelectionState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -377,7 +377,7 @@ class __$$_SignInStateCopyWithImpl<$Res>
   $Res call({
     Object? isLogged = freezed,
   }) {
-    return _then(_$_SignInState(
+    return _then(_$_UserSelectionState(
       isLogged: freezed == isLogged
           ? _value.isLogged
           : isLogged // ignore: cast_nullable_to_non_nullable
@@ -388,22 +388,22 @@ class __$$_SignInStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInState implements _SignInState {
-  const _$_SignInState({this.isLogged});
+class _$_UserSelectionState implements _UserSelectionState {
+  const _$_UserSelectionState({this.isLogged});
 
   @override
   final bool? isLogged;
 
   @override
   String toString() {
-    return 'SignInState(isLogged: $isLogged)';
+    return 'UserSelectionState(isLogged: $isLogged)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SignInState &&
+            other is _$_UserSelectionState &&
             (identical(other.isLogged, isLogged) ||
                 other.isLogged == isLogged));
   }
@@ -414,17 +414,19 @@ class _$_SignInState implements _SignInState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SignInStateCopyWith<_$_SignInState> get copyWith =>
-      __$$_SignInStateCopyWithImpl<_$_SignInState>(this, _$identity);
+  _$$_UserSelectionStateCopyWith<_$_UserSelectionState> get copyWith =>
+      __$$_UserSelectionStateCopyWithImpl<_$_UserSelectionState>(
+          this, _$identity);
 }
 
-abstract class _SignInState implements SignInState {
-  const factory _SignInState({final bool? isLogged}) = _$_SignInState;
+abstract class _UserSelectionState implements UserSelectionState {
+  const factory _UserSelectionState({final bool? isLogged}) =
+      _$_UserSelectionState;
 
   @override
   bool? get isLogged;
   @override
   @JsonKey(ignore: true)
-  _$$_SignInStateCopyWith<_$_SignInState> get copyWith =>
+  _$$_UserSelectionStateCopyWith<_$_UserSelectionState> get copyWith =>
       throw _privateConstructorUsedError;
 }

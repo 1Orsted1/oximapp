@@ -2,8 +2,8 @@ import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 
 @RoutePage()
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+class UserRegisterScreen extends StatelessWidget {
+  const UserRegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,10 +11,8 @@ class SignUpScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Sign Up"),
       ),
-      body: Container(
-        child: Center(
-          child: Text("Hello"),
-        ),
+      body: const Center(
+        child: Text("Hello"),
       ),
     );
   }

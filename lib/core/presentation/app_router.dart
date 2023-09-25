@@ -2,8 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../dashboard/presentation/home_screen.dart';
-import '../../sign_in/presentation/sign_in_screen.dart';
-import '../../sign_up/presentation/sign_up_screen.dart';
+import '../../user_register/presentation/user_register_screen.dart';
+import '../../user_selection/presentation/user_selection_screen.dart';
 import 'auth_guard.dart';
 
 part 'app_router.gr.dart';
@@ -18,8 +18,8 @@ class AppRouter extends _$AppRouter {
 
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(page: SignUpRoute.page),
-        AutoRoute(page: SignInRoute.page),
+        AutoRoute(page: UserRegisterRoute.page),
+        AutoRoute(page: UserSelectionRoute.page),
         AutoRoute(
           page: HomeRoute.page,
           //guards: [getIt<AuthGuard>()],
