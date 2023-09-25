@@ -14,39 +14,30 @@ class UserSelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final t = Translations.of(context);
-    final auth = context.watch<UserSelectionBloc>();
-    return BlocListener<UserSelectionBloc, UserSelectionState>(
-      listener: (context, state) {
-        l.d("h");
-        if (state.isLogged! == true) {
-          l.d("i");
-          context.router.replace(const HomeRoute());
-        }
-      },
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(t.login.title),
-        ),
-        body: Column(
-          children: [
-            Center(
-              child: ElevatedButton(
-                  onPressed: () {
-                    l.d("pressed");
-                    auth.add(const UserSelectionEvent.setSignInStatus(
-                        isLogged: true));
-                    l.d("pressed2");
-                    //context.router.replace(const HomeRoute());
-                  },
-                  child: const Text("Enter")),
-            ),
-            TextButton(
+    final userSelection = context.watch<UserSelectionBloc>();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(t.login.title),
+      ),
+      body: Column(
+        children: [
+          Center(
+            child: ElevatedButton(
                 onPressed: () {
-                  context.router.push(const UserRegisterRoute());
+                  l.d("pressed");
+                  userSelection.add(
+                      const UserSelectionEvent.setSignInStatus(isLogged: true));
+                  l.d("pressed2");
+                  //context.router.replace(const HomeRoute());
                 },
-                child: const Text("registrarse"))
-          ],
-        ),
+                child: const Text("Enter")),
+          ),
+          TextButton(
+              onPressed: () {
+                context.router.push(const UserRegisterRoute());
+              },
+              child: const Text("registrarse"))
+        ],
       ),
     );
   }

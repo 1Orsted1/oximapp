@@ -22,7 +22,7 @@ class UserSelectionDataSourceImpl implements IUserSelectionDataSource {
   }
 
   @override
-  Future<void> setSelectedUser({required bool isLogged}) async {
+  void setSelectedUser({required bool isLogged}) {
     _box.put(_signInBoxKey, isLogged);
   }
 }

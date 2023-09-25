@@ -15,17 +15,7 @@ class SignInFacadeImpl implements IUserSelectionFacade {
   }
 
   @override
-  Future<void> setSelectedUser({required bool isLogged}) async {
+  void setSelectedUser({required bool isLogged}) async {
     _source.setSelectedUser(isLogged: isLogged);
   }
-
-  // @override
-  // bool getSignInStatus() {
-  //   return _source.getSignInStatus();
-  // }
-
-  // @override
-  // Future<void> setSignInStatus({required bool isLogged}) async {
-  //   _source.setSignInStatus(isLogged: isLogged);
-  // }
 }

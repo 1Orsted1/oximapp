@@ -6,26 +6,23 @@ import 'app_router.dart';
 
 @injectable
 class AuthGuard implements AutoRouteGuard {
-  AuthGuard(this.signIn, this.signInFacade);
+  AuthGuard(this.userSelection, this.signInFacade);
 
-  final UserSelectionBloc signIn;
+  final UserSelectionBloc userSelection;
   final IUserSelectionFacade signInFacade;
 
   @override
   void onNavigation(NavigationResolver resolver, StackRouter router) async {
-    //final ISignInFacade _facade;
-    //final userIsLogged = signIn.state.isLogged;
-    final userIsLogged = signInFacade.getSelectedUser();
-    print("user status guard: $userIsLogged");
-    // the navigation is paused until resolver.next() is called with either
-    // true to resume/continue navigation or false to abort navigation
-    if (userIsLogged) {
-      // if user is authenticated we continue
-      resolver.next(true);
+    if (userSelection.state.isLogged! ||
+        resolver.routeName == UserSelectionRoute.name) {
+      resolver.next();
     } else {
-      // we redirect the user to our login page
-      // tip: use resolver.redirect to have the redirected route
-      // automatically removed from the stack when the resolver is completed
+      userSelection.stream
+          .firstWhere((element) => element.isLogged!)
+          .then((value) => resolver.resolveNext(
+                userSelection.state.isLogged!,
+                reevaluateNext: false,
+              ));
       resolver.redirect(const UserSelectionRoute());
     }
   }

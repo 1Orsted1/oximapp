@@ -10,6 +10,6 @@ class UserSelectionState with _$UserSelectionState {
         isLogged: false,
       );
 
-  factory UserSelectionState.initialTest({required bool isLogged}) =>
-      UserSelectionState(isLogged: isLogged);
+  // factory UserSelectionState.initial({required bool isLogged}) =>
+  //     UserSelectionState(isLogged: isLogged);
 }

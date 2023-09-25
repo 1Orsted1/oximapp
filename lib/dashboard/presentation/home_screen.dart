@@ -36,7 +36,6 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {
               signIn.add(
                   const UserSelectionEvent.setSignInStatus(isLogged: false));
-              context.router.replace(const UserSelectionRoute());
             },
             icon: const Icon(Icons.exit_to_app),
           )

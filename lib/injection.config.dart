@@ -41,7 +41,7 @@ extension GetItInjectableX on _i1.GetIt {
     );
     gh.factory<_i5.IUserSelectionFacade>(
         () => _i6.SignInFacadeImpl(gh<_i3.IUserSelectionDataSource>()));
-    gh.factory<_i7.UserSelectionBloc>(
+    gh.lazySingleton<_i7.UserSelectionBloc>(
         () => _i7.UserSelectionBloc(gh<_i5.IUserSelectionFacade>())..init());
     gh.factory<_i8.AuthGuard>(() => _i8.AuthGuard(
           gh<_i7.UserSelectionBloc>(),
