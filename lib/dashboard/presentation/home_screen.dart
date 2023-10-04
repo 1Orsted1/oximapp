@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../core/presentation/app_router.dart';
 import '../../user_selection/application/user_selection_bloc.dart';
 
 @RoutePage()
@@ -20,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       _counter++;
     });
-    context.router.push(const UserRegisterRoute());
+    // context.router.push(const UserRegisterRoute());
   }
 
   @override
@@ -45,6 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            FilledButton(onPressed: () {}, child: const Text("Hello")),
             const Text(
               'You have pushed the button this many times:',
             ),
