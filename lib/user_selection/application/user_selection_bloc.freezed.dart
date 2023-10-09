@@ -20,18 +20,21 @@ mixin _$UserSelectionEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() getSignInStatus,
     required TResult Function(bool isLogged) setSignInStatus,
+    required TResult Function() getAllUsers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getSignInStatus,
     TResult? Function(bool isLogged)? setSignInStatus,
+    TResult? Function()? getAllUsers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getSignInStatus,
     TResult Function(bool isLogged)? setSignInStatus,
+    TResult Function()? getAllUsers,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$UserSelectionEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_getSelectedUser value) getSignInStatus,
     required TResult Function(_setSelectedUser value) setSignInStatus,
+    required TResult Function(_GetAllUsers value) getAllUsers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_getSelectedUser value)? getSignInStatus,
     TResult? Function(_setSelectedUser value)? setSignInStatus,
+    TResult? Function(_GetAllUsers value)? getAllUsers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_getSelectedUser value)? getSignInStatus,
     TResult Function(_setSelectedUser value)? setSignInStatus,
+    TResult Function(_GetAllUsers value)? getAllUsers,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -114,6 +120,7 @@ class _$_getSelectedUser implements _getSelectedUser {
   TResult when<TResult extends Object?>({
     required TResult Function() getSignInStatus,
     required TResult Function(bool isLogged) setSignInStatus,
+    required TResult Function() getAllUsers,
   }) {
     return getSignInStatus();
   }
@@ -123,6 +130,7 @@ class _$_getSelectedUser implements _getSelectedUser {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getSignInStatus,
     TResult? Function(bool isLogged)? setSignInStatus,
+    TResult? Function()? getAllUsers,
   }) {
     return getSignInStatus?.call();
   }
@@ -132,6 +140,7 @@ class _$_getSelectedUser implements _getSelectedUser {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getSignInStatus,
     TResult Function(bool isLogged)? setSignInStatus,
+    TResult Function()? getAllUsers,
     required TResult orElse(),
   }) {
     if (getSignInStatus != null) {
@@ -145,6 +154,7 @@ class _$_getSelectedUser implements _getSelectedUser {
   TResult map<TResult extends Object?>({
     required TResult Function(_getSelectedUser value) getSignInStatus,
     required TResult Function(_setSelectedUser value) setSignInStatus,
+    required TResult Function(_GetAllUsers value) getAllUsers,
   }) {
     return getSignInStatus(this);
   }
@@ -154,6 +164,7 @@ class _$_getSelectedUser implements _getSelectedUser {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_getSelectedUser value)? getSignInStatus,
     TResult? Function(_setSelectedUser value)? setSignInStatus,
+    TResult? Function(_GetAllUsers value)? getAllUsers,
   }) {
     return getSignInStatus?.call(this);
   }
@@ -163,6 +174,7 @@ class _$_getSelectedUser implements _getSelectedUser {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_getSelectedUser value)? getSignInStatus,
     TResult Function(_setSelectedUser value)? setSignInStatus,
+    TResult Function(_GetAllUsers value)? getAllUsers,
     required TResult orElse(),
   }) {
     if (getSignInStatus != null) {
@@ -243,6 +255,7 @@ class _$_setSelectedUser implements _setSelectedUser {
   TResult when<TResult extends Object?>({
     required TResult Function() getSignInStatus,
     required TResult Function(bool isLogged) setSignInStatus,
+    required TResult Function() getAllUsers,
   }) {
     return setSignInStatus(isLogged);
   }
@@ -252,6 +265,7 @@ class _$_setSelectedUser implements _setSelectedUser {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getSignInStatus,
     TResult? Function(bool isLogged)? setSignInStatus,
+    TResult? Function()? getAllUsers,
   }) {
     return setSignInStatus?.call(isLogged);
   }
@@ -261,6 +275,7 @@ class _$_setSelectedUser implements _setSelectedUser {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getSignInStatus,
     TResult Function(bool isLogged)? setSignInStatus,
+    TResult Function()? getAllUsers,
     required TResult orElse(),
   }) {
     if (setSignInStatus != null) {
@@ -274,6 +289,7 @@ class _$_setSelectedUser implements _setSelectedUser {
   TResult map<TResult extends Object?>({
     required TResult Function(_getSelectedUser value) getSignInStatus,
     required TResult Function(_setSelectedUser value) setSignInStatus,
+    required TResult Function(_GetAllUsers value) getAllUsers,
   }) {
     return setSignInStatus(this);
   }
@@ -283,6 +299,7 @@ class _$_setSelectedUser implements _setSelectedUser {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_getSelectedUser value)? getSignInStatus,
     TResult? Function(_setSelectedUser value)? setSignInStatus,
+    TResult? Function(_GetAllUsers value)? getAllUsers,
   }) {
     return setSignInStatus?.call(this);
   }
@@ -292,6 +309,7 @@ class _$_setSelectedUser implements _setSelectedUser {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_getSelectedUser value)? getSignInStatus,
     TResult Function(_setSelectedUser value)? setSignInStatus,
+    TResult Function(_GetAllUsers value)? getAllUsers,
     required TResult orElse(),
   }) {
     if (setSignInStatus != null) {
@@ -312,8 +330,117 @@ abstract class _setSelectedUser implements UserSelectionEvent {
 }
 
 /// @nodoc
+abstract class _$$_GetAllUsersCopyWith<$Res> {
+  factory _$$_GetAllUsersCopyWith(
+          _$_GetAllUsers value, $Res Function(_$_GetAllUsers) then) =
+      __$$_GetAllUsersCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_GetAllUsersCopyWithImpl<$Res>
+    extends _$UserSelectionEventCopyWithImpl<$Res, _$_GetAllUsers>
+    implements _$$_GetAllUsersCopyWith<$Res> {
+  __$$_GetAllUsersCopyWithImpl(
+      _$_GetAllUsers _value, $Res Function(_$_GetAllUsers) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_GetAllUsers implements _GetAllUsers {
+  const _$_GetAllUsers();
+
+  @override
+  String toString() {
+    return 'UserSelectionEvent.getAllUsers()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_GetAllUsers);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getSignInStatus,
+    required TResult Function(bool isLogged) setSignInStatus,
+    required TResult Function() getAllUsers,
+  }) {
+    return getAllUsers();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getSignInStatus,
+    TResult? Function(bool isLogged)? setSignInStatus,
+    TResult? Function()? getAllUsers,
+  }) {
+    return getAllUsers?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getSignInStatus,
+    TResult Function(bool isLogged)? setSignInStatus,
+    TResult Function()? getAllUsers,
+    required TResult orElse(),
+  }) {
+    if (getAllUsers != null) {
+      return getAllUsers();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_getSelectedUser value) getSignInStatus,
+    required TResult Function(_setSelectedUser value) setSignInStatus,
+    required TResult Function(_GetAllUsers value) getAllUsers,
+  }) {
+    return getAllUsers(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_getSelectedUser value)? getSignInStatus,
+    TResult? Function(_setSelectedUser value)? setSignInStatus,
+    TResult? Function(_GetAllUsers value)? getAllUsers,
+  }) {
+    return getAllUsers?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_getSelectedUser value)? getSignInStatus,
+    TResult Function(_setSelectedUser value)? setSignInStatus,
+    TResult Function(_GetAllUsers value)? getAllUsers,
+    required TResult orElse(),
+  }) {
+    if (getAllUsers != null) {
+      return getAllUsers(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetAllUsers implements UserSelectionEvent {
+  const factory _GetAllUsers() = _$_GetAllUsers;
+}
+
+/// @nodoc
 mixin _$UserSelectionState {
   bool? get isLogged => throw _privateConstructorUsedError;
+  List<User>? get users => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserSelectionStateCopyWith<UserSelectionState> get copyWith =>
@@ -326,7 +453,7 @@ abstract class $UserSelectionStateCopyWith<$Res> {
           UserSelectionState value, $Res Function(UserSelectionState) then) =
       _$UserSelectionStateCopyWithImpl<$Res, UserSelectionState>;
   @useResult
-  $Res call({bool? isLogged});
+  $Res call({bool? isLogged, List<User>? users});
 }
 
 /// @nodoc
@@ -343,12 +470,17 @@ class _$UserSelectionStateCopyWithImpl<$Res, $Val extends UserSelectionState>
   @override
   $Res call({
     Object? isLogged = freezed,
+    Object? users = freezed,
   }) {
     return _then(_value.copyWith(
       isLogged: freezed == isLogged
           ? _value.isLogged
           : isLogged // ignore: cast_nullable_to_non_nullable
               as bool?,
+      users: freezed == users
+          ? _value.users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<User>?,
     ) as $Val);
   }
 }
@@ -361,7 +493,7 @@ abstract class _$$_UserSelectionStateCopyWith<$Res>
       __$$_UserSelectionStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool? isLogged});
+  $Res call({bool? isLogged, List<User>? users});
 }
 
 /// @nodoc
@@ -376,12 +508,17 @@ class __$$_UserSelectionStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLogged = freezed,
+    Object? users = freezed,
   }) {
     return _then(_$_UserSelectionState(
       isLogged: freezed == isLogged
           ? _value.isLogged
           : isLogged // ignore: cast_nullable_to_non_nullable
               as bool?,
+      users: freezed == users
+          ? _value._users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<User>?,
     ));
   }
 }
@@ -389,14 +526,24 @@ class __$$_UserSelectionStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_UserSelectionState implements _UserSelectionState {
-  const _$_UserSelectionState({this.isLogged});
+  const _$_UserSelectionState({this.isLogged, final List<User>? users})
+      : _users = users;
 
   @override
   final bool? isLogged;
+  final List<User>? _users;
+  @override
+  List<User>? get users {
+    final value = _users;
+    if (value == null) return null;
+    if (_users is EqualUnmodifiableListView) return _users;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'UserSelectionState(isLogged: $isLogged)';
+    return 'UserSelectionState(isLogged: $isLogged, users: $users)';
   }
 
   @override
@@ -405,11 +552,13 @@ class _$_UserSelectionState implements _UserSelectionState {
         (other.runtimeType == runtimeType &&
             other is _$_UserSelectionState &&
             (identical(other.isLogged, isLogged) ||
-                other.isLogged == isLogged));
+                other.isLogged == isLogged) &&
+            const DeepCollectionEquality().equals(other._users, _users));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isLogged);
+  int get hashCode => Object.hash(
+      runtimeType, isLogged, const DeepCollectionEquality().hash(_users));
 
   @JsonKey(ignore: true)
   @override
@@ -420,11 +569,13 @@ class _$_UserSelectionState implements _UserSelectionState {
 }
 
 abstract class _UserSelectionState implements UserSelectionState {
-  const factory _UserSelectionState({final bool? isLogged}) =
-      _$_UserSelectionState;
+  const factory _UserSelectionState(
+      {final bool? isLogged, final List<User>? users}) = _$_UserSelectionState;
 
   @override
   bool? get isLogged;
+  @override
+  List<User>? get users;
   @override
   @JsonKey(ignore: true)
   _$$_UserSelectionStateCopyWith<_$_UserSelectionState> get copyWith =>

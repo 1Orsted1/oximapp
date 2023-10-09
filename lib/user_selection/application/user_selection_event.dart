@@ -6,4 +6,5 @@ class UserSelectionEvent with _$UserSelectionEvent {
   const factory UserSelectionEvent.setSignInStatus({
     required bool isLogged,
   }) = _setSelectedUser;
+  const factory UserSelectionEvent.getAllUsers() = _GetAllUsers;
 }

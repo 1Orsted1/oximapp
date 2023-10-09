@@ -76,7 +76,7 @@ class UserRegisterScreen extends StatelessWidget with AutoRouteWrapper {
             width: MediaQuery.of(context).size.width / 3,
             child: FilledButton(
               onPressed: () {
-                urBloc.add(const UserRegisterEvent.create(name: "Gustavo 77"));
+                urBloc.add(const UserRegisterEvent.create(name: "Gustavo 79"));
               },
               child: const Text("registrar"),
             ),

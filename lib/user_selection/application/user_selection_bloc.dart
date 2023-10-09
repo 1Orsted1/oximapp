@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../user/domain/user.dart';
 import '../domain/i_user_selection_facade.dart';
 
 part 'user_selection_event.dart';
@@ -13,6 +14,7 @@ class UserSelectionBloc extends Bloc<UserSelectionEvent, UserSelectionState> {
   UserSelectionBloc(this._facade) : super(UserSelectionState.initial()) {
     on<_getSelectedUser>(_getUser);
     on<_setSelectedUser>(_setUser);
+    on<_GetAllUsers>(_getAll);
   }
   final IUserSelectionFacade _facade;
   final x = 1;
@@ -34,5 +36,14 @@ class UserSelectionBloc extends Bloc<UserSelectionEvent, UserSelectionState> {
       emit(state.copyWith(isLogged: event.isLogged));
     } catch (e) {}
   }
-  //Todo: stream listener
+
+  void _getAll(_GetAllUsers event, Emitter<UserSelectionState> emit) async {
+    try {
+      final users = await _facade.getUsers();
+      print(users);
+      emit(state.copyWith(users: users));
+    } catch (e) {
+      print(e);
+    }
+  }
 }

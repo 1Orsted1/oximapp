@@ -8,13 +8,28 @@ import '../../i18n/strings.g.dart';
 import '../application/user_selection_bloc.dart';
 
 @RoutePage()
-class UserSelectionScreen extends StatelessWidget {
+class UserSelectionScreen extends StatefulWidget {
   const UserSelectionScreen({super.key});
+
+  @override
+  State<UserSelectionScreen> createState() => _UserSelectionScreenState();
+}
+
+class _UserSelectionScreenState extends State<UserSelectionScreen> {
+  @override
+  void initState() {
+    super.initState();
+    context
+        .read<UserSelectionBloc>()
+        .add(const UserSelectionEvent.getAllUsers());
+  }
 
   @override
   Widget build(BuildContext context) {
     final t = Translations.of(context);
     final userSelection = context.watch<UserSelectionBloc>();
+    final userState = userSelection.state;
+    final users = userState.users;
     return Scaffold(
       appBar: AppBar(
         title: Text(t.login.title),
@@ -27,13 +42,11 @@ class UserSelectionScreen extends StatelessWidget {
           child: Column(
             children: [
               Expanded(
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  //shrinkWrap: true,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 16),
-                      child: Card(
+                child: ListView.builder(
+                    itemCount: users!.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Card(
                         child: Container(
                           padding: EdgeInsets.symmetric(
                             vertical: MediaQuery.of(context).size.height / 12,
@@ -42,7 +55,7 @@ class UserSelectionScreen extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "Gustavo",
+                                users[index].userName!,
                                 style:
                                     Theme.of(context).textTheme.headlineMedium!,
                               ),
@@ -64,42 +77,79 @@ class UserSelectionScreen extends StatelessWidget {
                             ],
                           ),
                         ),
-                      ),
-                    ),
-                    Card(
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                          vertical: MediaQuery.of(context).size.height / 12,
-                        ),
-                        width: MediaQuery.of(context).size.width * .90,
-                        child: Column(
-                          children: [
-                            Text(
-                              "Gustavo 2",
-                              style:
-                                  Theme.of(context).textTheme.headlineMedium!,
-                            ),
-                            CircleAvatar(
-                              radius: 100,
-                              backgroundImage: Image.network(
-                                      "https://imgs.search.brave.com/GS7B7jGlPKk7BAfn_GwB20dNx7igBXG4DfpT9FDqBdU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAwLzM3LzM1Lzcz/LzM2MF9GXzM3MzU3/MzEyXzZHTVFZY3dN/UXd0dzBOMHMxTlo4/YllvZ1V2OWJ1SEhx/LmpwZw")
-                                  .image,
-                            ),
-                            const Gap(16),
-                            Center(
-                              child: FilledButton(
-                                  onPressed: () {
-                                    userSelection.add(const UserSelectionEvent
-                                        .setSignInStatus(isLogged: true));
-                                  },
-                                  child: const Text("Seleccionar")),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                      );
+
+                      //shrinkWrap: true,
+                      // children: [
+                      //   Padding(
+                      //     padding: const EdgeInsets.only(left: 16),
+                      //     child: Card(
+                      //       child: Container(
+                      //         padding: EdgeInsets.symmetric(
+                      //           vertical: MediaQuery.of(context).size.height / 12,
+                      //         ),
+                      //         width: MediaQuery.of(context).size.width * .90,
+                      //         child: Column(
+                      //           children: [
+                      //             Text(
+                      //               "Gustavo",
+                      //               style:
+                      //                   Theme.of(context).textTheme.headlineMedium!,
+                      //             ),
+                      //             CircleAvatar(
+                      //               radius: 100,
+                      //               backgroundImage: Image.network(
+                      //                       "https://imgs.search.brave.com/GS7B7jGlPKk7BAfn_GwB20dNx7igBXG4DfpT9FDqBdU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAwLzM3LzM1Lzcz/LzM2MF9GXzM3MzU3/MzEyXzZHTVFZY3dN/UXd0dzBOMHMxTlo4/YllvZ1V2OWJ1SEhx/LmpwZw")
+                      //                   .image,
+                      //             ),
+                      //             const Gap(16),
+                      //             Center(
+                      //               child: FilledButton(
+                      //                   onPressed: () {
+                      //                     userSelection.add(const UserSelectionEvent
+                      //                         .setSignInStatus(isLogged: true));
+                      //                   },
+                      //                   child: const Text("Seleccionar")),
+                      //             ),
+                      //           ],
+                      //         ),
+                      //       ),
+                      //     ),
+                      //   ),
+                      //   Card(
+                      //     child: Container(
+                      //       padding: EdgeInsets.symmetric(
+                      //         vertical: MediaQuery.of(context).size.height / 12,
+                      //       ),
+                      //       width: MediaQuery.of(context).size.width * .90,
+                      //       child: Column(
+                      //         children: [
+                      //           Text(
+                      //             "Gustavo 2",
+                      //             style:
+                      //                 Theme.of(context).textTheme.headlineMedium!,
+                      //           ),
+                      //           CircleAvatar(
+                      //             radius: 100,
+                      //             backgroundImage: Image.network(
+                      //                     "https://imgs.search.brave.com/GS7B7jGlPKk7BAfn_GwB20dNx7igBXG4DfpT9FDqBdU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAwLzM3LzM1Lzcz/LzM2MF9GXzM3MzU3/MzEyXzZHTVFZY3dN/UXd0dzBOMHMxTlo4/YllvZ1V2OWJ1SEhx/LmpwZw")
+                      //                 .image,
+                      //           ),
+                      //           const Gap(16),
+                      //           Center(
+                      //             child: FilledButton(
+                      //                 onPressed: () {
+                      //                   userSelection.add(const UserSelectionEvent
+                      //                       .setSignInStatus(isLogged: true));
+                      //                 },
+                      //                 child: const Text("Seleccionar")),
+                      //           ),
+                      //         ],
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ],
+                    }),
               ),
               const Gap(32),
               ElevatedButton(
