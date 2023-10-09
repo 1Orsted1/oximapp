@@ -15,10 +15,10 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
-    HomeRoute.name: (routeData) {
+    UserRegisterRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const HomeScreen(),
+        child: WrappedRoute(child: const UserRegisterScreen()),
       );
     },
     UserSelectionRoute.name: (routeData) {
@@ -27,25 +27,25 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const UserSelectionScreen(),
       );
     },
-    UserRegisterRoute.name: (routeData) {
+    HomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const UserRegisterScreen(),
+        child: const HomeScreen(),
       );
     },
   };
 }
 
 /// generated route for
-/// [HomeScreen]
-class HomeRoute extends PageRouteInfo<void> {
-  const HomeRoute({List<PageRouteInfo>? children})
+/// [UserRegisterScreen]
+class UserRegisterRoute extends PageRouteInfo<void> {
+  const UserRegisterRoute({List<PageRouteInfo>? children})
       : super(
-          HomeRoute.name,
+          UserRegisterRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'HomeRoute';
+  static const String name = 'UserRegisterRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -65,15 +65,15 @@ class UserSelectionRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [UserRegisterScreen]
-class UserRegisterRoute extends PageRouteInfo<void> {
-  const UserRegisterRoute({List<PageRouteInfo>? children})
+/// [HomeScreen]
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute({List<PageRouteInfo>? children})
       : super(
-          UserRegisterRoute.name,
+          HomeRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'UserRegisterRoute';
+  static const String name = 'HomeRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
