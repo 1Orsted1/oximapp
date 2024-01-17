@@ -81,25 +81,25 @@ class _$UserSelectionEventCopyWithImpl<$Res, $Val extends UserSelectionEvent>
 }
 
 /// @nodoc
-abstract class _$$_getSelectedUserCopyWith<$Res> {
-  factory _$$_getSelectedUserCopyWith(
-          _$_getSelectedUser value, $Res Function(_$_getSelectedUser) then) =
-      __$$_getSelectedUserCopyWithImpl<$Res>;
+abstract class _$$getSelectedUserImplCopyWith<$Res> {
+  factory _$$getSelectedUserImplCopyWith(_$getSelectedUserImpl value,
+          $Res Function(_$getSelectedUserImpl) then) =
+      __$$getSelectedUserImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_getSelectedUserCopyWithImpl<$Res>
-    extends _$UserSelectionEventCopyWithImpl<$Res, _$_getSelectedUser>
-    implements _$$_getSelectedUserCopyWith<$Res> {
-  __$$_getSelectedUserCopyWithImpl(
-      _$_getSelectedUser _value, $Res Function(_$_getSelectedUser) _then)
+class __$$getSelectedUserImplCopyWithImpl<$Res>
+    extends _$UserSelectionEventCopyWithImpl<$Res, _$getSelectedUserImpl>
+    implements _$$getSelectedUserImplCopyWith<$Res> {
+  __$$getSelectedUserImplCopyWithImpl(
+      _$getSelectedUserImpl _value, $Res Function(_$getSelectedUserImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_getSelectedUser implements _getSelectedUser {
-  const _$_getSelectedUser();
+class _$getSelectedUserImpl implements _getSelectedUser {
+  const _$getSelectedUserImpl();
 
   @override
   String toString() {
@@ -109,7 +109,7 @@ class _$_getSelectedUser implements _getSelectedUser {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_getSelectedUser);
+        (other.runtimeType == runtimeType && other is _$getSelectedUserImpl);
   }
 
   @override
@@ -185,24 +185,24 @@ class _$_getSelectedUser implements _getSelectedUser {
 }
 
 abstract class _getSelectedUser implements UserSelectionEvent {
-  const factory _getSelectedUser() = _$_getSelectedUser;
+  const factory _getSelectedUser() = _$getSelectedUserImpl;
 }
 
 /// @nodoc
-abstract class _$$_setSelectedUserCopyWith<$Res> {
-  factory _$$_setSelectedUserCopyWith(
-          _$_setSelectedUser value, $Res Function(_$_setSelectedUser) then) =
-      __$$_setSelectedUserCopyWithImpl<$Res>;
+abstract class _$$setSelectedUserImplCopyWith<$Res> {
+  factory _$$setSelectedUserImplCopyWith(_$setSelectedUserImpl value,
+          $Res Function(_$setSelectedUserImpl) then) =
+      __$$setSelectedUserImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool isLogged});
 }
 
 /// @nodoc
-class __$$_setSelectedUserCopyWithImpl<$Res>
-    extends _$UserSelectionEventCopyWithImpl<$Res, _$_setSelectedUser>
-    implements _$$_setSelectedUserCopyWith<$Res> {
-  __$$_setSelectedUserCopyWithImpl(
-      _$_setSelectedUser _value, $Res Function(_$_setSelectedUser) _then)
+class __$$setSelectedUserImplCopyWithImpl<$Res>
+    extends _$UserSelectionEventCopyWithImpl<$Res, _$setSelectedUserImpl>
+    implements _$$setSelectedUserImplCopyWith<$Res> {
+  __$$setSelectedUserImplCopyWithImpl(
+      _$setSelectedUserImpl _value, $Res Function(_$setSelectedUserImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -210,7 +210,7 @@ class __$$_setSelectedUserCopyWithImpl<$Res>
   $Res call({
     Object? isLogged = null,
   }) {
-    return _then(_$_setSelectedUser(
+    return _then(_$setSelectedUserImpl(
       isLogged: null == isLogged
           ? _value.isLogged
           : isLogged // ignore: cast_nullable_to_non_nullable
@@ -221,8 +221,8 @@ class __$$_setSelectedUserCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_setSelectedUser implements _setSelectedUser {
-  const _$_setSelectedUser({required this.isLogged});
+class _$setSelectedUserImpl implements _setSelectedUser {
+  const _$setSelectedUserImpl({required this.isLogged});
 
   @override
   final bool isLogged;
@@ -236,7 +236,7 @@ class _$_setSelectedUser implements _setSelectedUser {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_setSelectedUser &&
+            other is _$setSelectedUserImpl &&
             (identical(other.isLogged, isLogged) ||
                 other.isLogged == isLogged));
   }
@@ -247,8 +247,9 @@ class _$_setSelectedUser implements _setSelectedUser {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_setSelectedUserCopyWith<_$_setSelectedUser> get copyWith =>
-      __$$_setSelectedUserCopyWithImpl<_$_setSelectedUser>(this, _$identity);
+  _$$setSelectedUserImplCopyWith<_$setSelectedUserImpl> get copyWith =>
+      __$$setSelectedUserImplCopyWithImpl<_$setSelectedUserImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -321,34 +322,34 @@ class _$_setSelectedUser implements _setSelectedUser {
 
 abstract class _setSelectedUser implements UserSelectionEvent {
   const factory _setSelectedUser({required final bool isLogged}) =
-      _$_setSelectedUser;
+      _$setSelectedUserImpl;
 
   bool get isLogged;
   @JsonKey(ignore: true)
-  _$$_setSelectedUserCopyWith<_$_setSelectedUser> get copyWith =>
+  _$$setSelectedUserImplCopyWith<_$setSelectedUserImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_GetAllUsersCopyWith<$Res> {
-  factory _$$_GetAllUsersCopyWith(
-          _$_GetAllUsers value, $Res Function(_$_GetAllUsers) then) =
-      __$$_GetAllUsersCopyWithImpl<$Res>;
+abstract class _$$GetAllUsersImplCopyWith<$Res> {
+  factory _$$GetAllUsersImplCopyWith(
+          _$GetAllUsersImpl value, $Res Function(_$GetAllUsersImpl) then) =
+      __$$GetAllUsersImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_GetAllUsersCopyWithImpl<$Res>
-    extends _$UserSelectionEventCopyWithImpl<$Res, _$_GetAllUsers>
-    implements _$$_GetAllUsersCopyWith<$Res> {
-  __$$_GetAllUsersCopyWithImpl(
-      _$_GetAllUsers _value, $Res Function(_$_GetAllUsers) _then)
+class __$$GetAllUsersImplCopyWithImpl<$Res>
+    extends _$UserSelectionEventCopyWithImpl<$Res, _$GetAllUsersImpl>
+    implements _$$GetAllUsersImplCopyWith<$Res> {
+  __$$GetAllUsersImplCopyWithImpl(
+      _$GetAllUsersImpl _value, $Res Function(_$GetAllUsersImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_GetAllUsers implements _GetAllUsers {
-  const _$_GetAllUsers();
+class _$GetAllUsersImpl implements _GetAllUsers {
+  const _$GetAllUsersImpl();
 
   @override
   String toString() {
@@ -358,7 +359,7 @@ class _$_GetAllUsers implements _GetAllUsers {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_GetAllUsers);
+        (other.runtimeType == runtimeType && other is _$GetAllUsersImpl);
   }
 
   @override
@@ -434,7 +435,7 @@ class _$_GetAllUsers implements _GetAllUsers {
 }
 
 abstract class _GetAllUsers implements UserSelectionEvent {
-  const factory _GetAllUsers() = _$_GetAllUsers;
+  const factory _GetAllUsers() = _$GetAllUsersImpl;
 }
 
 /// @nodoc
@@ -486,22 +487,22 @@ class _$UserSelectionStateCopyWithImpl<$Res, $Val extends UserSelectionState>
 }
 
 /// @nodoc
-abstract class _$$_UserSelectionStateCopyWith<$Res>
+abstract class _$$UserSelectionStateImplCopyWith<$Res>
     implements $UserSelectionStateCopyWith<$Res> {
-  factory _$$_UserSelectionStateCopyWith(_$_UserSelectionState value,
-          $Res Function(_$_UserSelectionState) then) =
-      __$$_UserSelectionStateCopyWithImpl<$Res>;
+  factory _$$UserSelectionStateImplCopyWith(_$UserSelectionStateImpl value,
+          $Res Function(_$UserSelectionStateImpl) then) =
+      __$$UserSelectionStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({bool? isLogged, List<User>? users});
 }
 
 /// @nodoc
-class __$$_UserSelectionStateCopyWithImpl<$Res>
-    extends _$UserSelectionStateCopyWithImpl<$Res, _$_UserSelectionState>
-    implements _$$_UserSelectionStateCopyWith<$Res> {
-  __$$_UserSelectionStateCopyWithImpl(
-      _$_UserSelectionState _value, $Res Function(_$_UserSelectionState) _then)
+class __$$UserSelectionStateImplCopyWithImpl<$Res>
+    extends _$UserSelectionStateCopyWithImpl<$Res, _$UserSelectionStateImpl>
+    implements _$$UserSelectionStateImplCopyWith<$Res> {
+  __$$UserSelectionStateImplCopyWithImpl(_$UserSelectionStateImpl _value,
+      $Res Function(_$UserSelectionStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -510,7 +511,7 @@ class __$$_UserSelectionStateCopyWithImpl<$Res>
     Object? isLogged = freezed,
     Object? users = freezed,
   }) {
-    return _then(_$_UserSelectionState(
+    return _then(_$UserSelectionStateImpl(
       isLogged: freezed == isLogged
           ? _value.isLogged
           : isLogged // ignore: cast_nullable_to_non_nullable
@@ -525,8 +526,8 @@ class __$$_UserSelectionStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UserSelectionState implements _UserSelectionState {
-  const _$_UserSelectionState({this.isLogged, final List<User>? users})
+class _$UserSelectionStateImpl implements _UserSelectionState {
+  const _$UserSelectionStateImpl({this.isLogged, final List<User>? users})
       : _users = users;
 
   @override
@@ -550,7 +551,7 @@ class _$_UserSelectionState implements _UserSelectionState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserSelectionState &&
+            other is _$UserSelectionStateImpl &&
             (identical(other.isLogged, isLogged) ||
                 other.isLogged == isLogged) &&
             const DeepCollectionEquality().equals(other._users, _users));
@@ -563,14 +564,15 @@ class _$_UserSelectionState implements _UserSelectionState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserSelectionStateCopyWith<_$_UserSelectionState> get copyWith =>
-      __$$_UserSelectionStateCopyWithImpl<_$_UserSelectionState>(
+  _$$UserSelectionStateImplCopyWith<_$UserSelectionStateImpl> get copyWith =>
+      __$$UserSelectionStateImplCopyWithImpl<_$UserSelectionStateImpl>(
           this, _$identity);
 }
 
 abstract class _UserSelectionState implements UserSelectionState {
   const factory _UserSelectionState(
-      {final bool? isLogged, final List<User>? users}) = _$_UserSelectionState;
+      {final bool? isLogged,
+      final List<User>? users}) = _$UserSelectionStateImpl;
 
   @override
   bool? get isLogged;
@@ -578,6 +580,6 @@ abstract class _UserSelectionState implements UserSelectionState {
   List<User>? get users;
   @override
   @JsonKey(ignore: true)
-  _$$_UserSelectionStateCopyWith<_$_UserSelectionState> get copyWith =>
+  _$$UserSelectionStateImplCopyWith<_$UserSelectionStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

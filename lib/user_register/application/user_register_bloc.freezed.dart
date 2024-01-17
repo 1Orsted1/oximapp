@@ -16,42 +16,43 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$UserRegisterEvent {
-  String get name => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String name) create,
+    required TResult Function() selectImage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String name)? create,
+    TResult? Function()? selectImage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name)? create,
+    TResult Function()? selectImage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Create value) create,
+    required TResult Function(_SelectImage value) selectImage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Create value)? create,
+    TResult? Function(_SelectImage value)? selectImage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Create value)? create,
+    TResult Function(_SelectImage value)? selectImage,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $UserRegisterEventCopyWith<UserRegisterEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -60,8 +61,6 @@ abstract class $UserRegisterEventCopyWith<$Res> {
   factory $UserRegisterEventCopyWith(
           UserRegisterEvent value, $Res Function(UserRegisterEvent) then) =
       _$UserRegisterEventCopyWithImpl<$Res, UserRegisterEvent>;
-  @useResult
-  $Res call({String name});
 }
 
 /// @nodoc
@@ -73,36 +72,23 @@ class _$UserRegisterEventCopyWithImpl<$Res, $Val extends UserRegisterEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
 }
 
 /// @nodoc
-abstract class _$$_CreateCopyWith<$Res>
-    implements $UserRegisterEventCopyWith<$Res> {
-  factory _$$_CreateCopyWith(_$_Create value, $Res Function(_$_Create) then) =
-      __$$_CreateCopyWithImpl<$Res>;
-  @override
+abstract class _$$CreateImplCopyWith<$Res> {
+  factory _$$CreateImplCopyWith(
+          _$CreateImpl value, $Res Function(_$CreateImpl) then) =
+      __$$CreateImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String name});
 }
 
 /// @nodoc
-class __$$_CreateCopyWithImpl<$Res>
-    extends _$UserRegisterEventCopyWithImpl<$Res, _$_Create>
-    implements _$$_CreateCopyWith<$Res> {
-  __$$_CreateCopyWithImpl(_$_Create _value, $Res Function(_$_Create) _then)
+class __$$CreateImplCopyWithImpl<$Res>
+    extends _$UserRegisterEventCopyWithImpl<$Res, _$CreateImpl>
+    implements _$$CreateImplCopyWith<$Res> {
+  __$$CreateImplCopyWithImpl(
+      _$CreateImpl _value, $Res Function(_$CreateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -110,7 +96,7 @@ class __$$_CreateCopyWithImpl<$Res>
   $Res call({
     Object? name = null,
   }) {
-    return _then(_$_Create(
+    return _then(_$CreateImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -121,8 +107,8 @@ class __$$_CreateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Create implements _Create {
-  const _$_Create({required this.name});
+class _$CreateImpl implements _Create {
+  const _$CreateImpl({required this.name});
 
   @override
   final String name;
@@ -136,7 +122,7 @@ class _$_Create implements _Create {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Create &&
+            other is _$CreateImpl &&
             (identical(other.name, name) || other.name == name));
   }
 
@@ -146,13 +132,14 @@ class _$_Create implements _Create {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CreateCopyWith<_$_Create> get copyWith =>
-      __$$_CreateCopyWithImpl<_$_Create>(this, _$identity);
+  _$$CreateImplCopyWith<_$CreateImpl> get copyWith =>
+      __$$CreateImplCopyWithImpl<_$CreateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String name) create,
+    required TResult Function() selectImage,
   }) {
     return create(name);
   }
@@ -161,6 +148,7 @@ class _$_Create implements _Create {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String name)? create,
+    TResult? Function()? selectImage,
   }) {
     return create?.call(name);
   }
@@ -169,6 +157,7 @@ class _$_Create implements _Create {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String name)? create,
+    TResult Function()? selectImage,
     required TResult orElse(),
   }) {
     if (create != null) {
@@ -181,6 +170,7 @@ class _$_Create implements _Create {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Create value) create,
+    required TResult Function(_SelectImage value) selectImage,
   }) {
     return create(this);
   }
@@ -189,6 +179,7 @@ class _$_Create implements _Create {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Create value)? create,
+    TResult? Function(_SelectImage value)? selectImage,
   }) {
     return create?.call(this);
   }
@@ -197,6 +188,7 @@ class _$_Create implements _Create {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Create value)? create,
+    TResult Function(_SelectImage value)? selectImage,
     required TResult orElse(),
   }) {
     if (create != null) {
@@ -207,14 +199,114 @@ class _$_Create implements _Create {
 }
 
 abstract class _Create implements UserRegisterEvent {
-  const factory _Create({required final String name}) = _$_Create;
+  const factory _Create({required final String name}) = _$CreateImpl;
+
+  String get name;
+  @JsonKey(ignore: true)
+  _$$CreateImplCopyWith<_$CreateImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SelectImageImplCopyWith<$Res> {
+  factory _$$SelectImageImplCopyWith(
+          _$SelectImageImpl value, $Res Function(_$SelectImageImpl) then) =
+      __$$SelectImageImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SelectImageImplCopyWithImpl<$Res>
+    extends _$UserRegisterEventCopyWithImpl<$Res, _$SelectImageImpl>
+    implements _$$SelectImageImplCopyWith<$Res> {
+  __$$SelectImageImplCopyWithImpl(
+      _$SelectImageImpl _value, $Res Function(_$SelectImageImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SelectImageImpl implements _SelectImage {
+  const _$SelectImageImpl();
 
   @override
-  String get name;
+  String toString() {
+    return 'UserRegisterEvent.selectImage()';
+  }
+
   @override
-  @JsonKey(ignore: true)
-  _$$_CreateCopyWith<_$_Create> get copyWith =>
-      throw _privateConstructorUsedError;
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SelectImageImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String name) create,
+    required TResult Function() selectImage,
+  }) {
+    return selectImage();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String name)? create,
+    TResult? Function()? selectImage,
+  }) {
+    return selectImage?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? create,
+    TResult Function()? selectImage,
+    required TResult orElse(),
+  }) {
+    if (selectImage != null) {
+      return selectImage();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Create value) create,
+    required TResult Function(_SelectImage value) selectImage,
+  }) {
+    return selectImage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Create value)? create,
+    TResult? Function(_SelectImage value)? selectImage,
+  }) {
+    return selectImage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Create value)? create,
+    TResult Function(_SelectImage value)? selectImage,
+    required TResult orElse(),
+  }) {
+    if (selectImage != null) {
+      return selectImage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SelectImage implements UserRegisterEvent {
+  const factory _SelectImage() = _$SelectImageImpl;
 }
 
 /// @nodoc
@@ -223,6 +315,7 @@ mixin _$UserRegisterState {
   bool get operationCompleted => throw _privateConstructorUsedError;
   String get errorMessage => throw _privateConstructorUsedError;
   String get userName => throw _privateConstructorUsedError;
+  Uint8List? get image => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserRegisterStateCopyWith<UserRegisterState> get copyWith =>
@@ -239,7 +332,8 @@ abstract class $UserRegisterStateCopyWith<$Res> {
       {bool isLoading,
       bool operationCompleted,
       String errorMessage,
-      String userName});
+      String userName,
+      Uint8List? image});
 }
 
 /// @nodoc
@@ -259,6 +353,7 @@ class _$UserRegisterStateCopyWithImpl<$Res, $Val extends UserRegisterState>
     Object? operationCompleted = null,
     Object? errorMessage = null,
     Object? userName = null,
+    Object? image = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: null == isLoading
@@ -277,31 +372,36 @@ class _$UserRegisterStateCopyWithImpl<$Res, $Val extends UserRegisterState>
           ? _value.userName
           : userName // ignore: cast_nullable_to_non_nullable
               as String,
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as Uint8List?,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_UserRegisterStateCopyWith<$Res>
+abstract class _$$UserRegisterStateImplCopyWith<$Res>
     implements $UserRegisterStateCopyWith<$Res> {
-  factory _$$_UserRegisterStateCopyWith(_$_UserRegisterState value,
-          $Res Function(_$_UserRegisterState) then) =
-      __$$_UserRegisterStateCopyWithImpl<$Res>;
+  factory _$$UserRegisterStateImplCopyWith(_$UserRegisterStateImpl value,
+          $Res Function(_$UserRegisterStateImpl) then) =
+      __$$UserRegisterStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {bool isLoading,
       bool operationCompleted,
       String errorMessage,
-      String userName});
+      String userName,
+      Uint8List? image});
 }
 
 /// @nodoc
-class __$$_UserRegisterStateCopyWithImpl<$Res>
-    extends _$UserRegisterStateCopyWithImpl<$Res, _$_UserRegisterState>
-    implements _$$_UserRegisterStateCopyWith<$Res> {
-  __$$_UserRegisterStateCopyWithImpl(
-      _$_UserRegisterState _value, $Res Function(_$_UserRegisterState) _then)
+class __$$UserRegisterStateImplCopyWithImpl<$Res>
+    extends _$UserRegisterStateCopyWithImpl<$Res, _$UserRegisterStateImpl>
+    implements _$$UserRegisterStateImplCopyWith<$Res> {
+  __$$UserRegisterStateImplCopyWithImpl(_$UserRegisterStateImpl _value,
+      $Res Function(_$UserRegisterStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -311,8 +411,9 @@ class __$$_UserRegisterStateCopyWithImpl<$Res>
     Object? operationCompleted = null,
     Object? errorMessage = null,
     Object? userName = null,
+    Object? image = freezed,
   }) {
-    return _then(_$_UserRegisterState(
+    return _then(_$UserRegisterStateImpl(
       isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
@@ -329,18 +430,23 @@ class __$$_UserRegisterStateCopyWithImpl<$Res>
           ? _value.userName
           : userName // ignore: cast_nullable_to_non_nullable
               as String,
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as Uint8List?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_UserRegisterState implements _UserRegisterState {
-  const _$_UserRegisterState(
+class _$UserRegisterStateImpl implements _UserRegisterState {
+  const _$UserRegisterStateImpl(
       {required this.isLoading,
       required this.operationCompleted,
       required this.errorMessage,
-      required this.userName});
+      required this.userName,
+      this.image});
 
   @override
   final bool isLoading;
@@ -350,17 +456,19 @@ class _$_UserRegisterState implements _UserRegisterState {
   final String errorMessage;
   @override
   final String userName;
+  @override
+  final Uint8List? image;
 
   @override
   String toString() {
-    return 'UserRegisterState(isLoading: $isLoading, operationCompleted: $operationCompleted, errorMessage: $errorMessage, userName: $userName)';
+    return 'UserRegisterState(isLoading: $isLoading, operationCompleted: $operationCompleted, errorMessage: $errorMessage, userName: $userName, image: $image)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserRegisterState &&
+            other is _$UserRegisterStateImpl &&
             (identical(other.isLoading, isLoading) ||
                 other.isLoading == isLoading) &&
             (identical(other.operationCompleted, operationCompleted) ||
@@ -368,18 +476,19 @@ class _$_UserRegisterState implements _UserRegisterState {
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage) &&
             (identical(other.userName, userName) ||
-                other.userName == userName));
+                other.userName == userName) &&
+            const DeepCollectionEquality().equals(other.image, image));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, isLoading, operationCompleted, errorMessage, userName);
+  int get hashCode => Object.hash(runtimeType, isLoading, operationCompleted,
+      errorMessage, userName, const DeepCollectionEquality().hash(image));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserRegisterStateCopyWith<_$_UserRegisterState> get copyWith =>
-      __$$_UserRegisterStateCopyWithImpl<_$_UserRegisterState>(
+  _$$UserRegisterStateImplCopyWith<_$UserRegisterStateImpl> get copyWith =>
+      __$$UserRegisterStateImplCopyWithImpl<_$UserRegisterStateImpl>(
           this, _$identity);
 }
 
@@ -388,7 +497,8 @@ abstract class _UserRegisterState implements UserRegisterState {
       {required final bool isLoading,
       required final bool operationCompleted,
       required final String errorMessage,
-      required final String userName}) = _$_UserRegisterState;
+      required final String userName,
+      final Uint8List? image}) = _$UserRegisterStateImpl;
 
   @override
   bool get isLoading;
@@ -399,7 +509,9 @@ abstract class _UserRegisterState implements UserRegisterState {
   @override
   String get userName;
   @override
+  Uint8List? get image;
+  @override
   @JsonKey(ignore: true)
-  _$$_UserRegisterStateCopyWith<_$_UserRegisterState> get copyWith =>
+  _$$UserRegisterStateImplCopyWith<_$UserRegisterStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

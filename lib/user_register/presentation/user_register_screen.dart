@@ -1,13 +1,17 @@
+import 'dart:io';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
-
+import 'package:image_picker/image_picker.dart';
+import 'package:oximapp_v2/core/constants.dart';
 import '../../injection.dart';
+import '../../user_selection/application/user_selection_bloc.dart';
 import '../application/user_register_bloc.dart';
 
 @RoutePage()
-class UserRegisterScreen extends StatelessWidget with AutoRouteWrapper {
+class UserRegisterScreen extends StatelessWidget implements AutoRouteWrapper {
   @override
   Widget wrappedRoute(BuildContext context) {
     return BlocProvider(
@@ -21,10 +25,13 @@ class UserRegisterScreen extends StatelessWidget with AutoRouteWrapper {
   @override
   Widget build(BuildContext context) {
     final urBloc = context.watch<UserRegisterBloc>();
+    final userSelectionBloc = context.read<UserSelectionBloc>();
     return BlocListener<UserRegisterBloc, UserRegisterState>(
       listener: (context, state) {
         if (state.isLoading == false && state.operationCompleted == true) {
           print("success!!!");
+
+          userSelectionBloc.add(const UserSelectionEvent.getAllUsers());
           context.router.pop();
         }
       },
@@ -46,16 +53,19 @@ class UserRegisterScreen extends StatelessWidget with AutoRouteWrapper {
               Center(
                 child: CircleAvatar(
                     radius: 86,
-                    backgroundImage: Image.network(
-                            "https://imgs.search.brave.com/GS7B7jGlPKk7BAfn_GwB20dNx7igBXG4DfpT9FDqBdU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAwLzM3LzM1Lzcz/LzM2MF9GXzM3MzU3/MzEyXzZHTVFZY3dN/UXd0dzBOMHMxTlo4/YllvZ1V2OWJ1SEhx/LmpwZw")
-                        .image,
+                    // backgroundImage: urBloc.state.image == null
+                    //     ? Image.network(temportalImage).image
+                    //     : Image.memory(urBloc.state.image!).image,
+
                     child: IconButton(
                       icon: Icon(
                         Icons.add_a_photo_outlined,
                         color: Theme.of(context).colorScheme.secondary,
                         size: 60,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        urBloc.add(const UserRegisterEvent.selectImage());
+                      },
                     )),
               ),
               const Gap(16),
@@ -76,7 +86,7 @@ class UserRegisterScreen extends StatelessWidget with AutoRouteWrapper {
             width: MediaQuery.of(context).size.width / 3,
             child: FilledButton(
               onPressed: () {
-                urBloc.add(const UserRegisterEvent.create(name: "Gustavo 79"));
+                urBloc.add(const UserRegisterEvent.create(name: "Gustavo 80"));
               },
               child: const Text("registrar"),
             ),

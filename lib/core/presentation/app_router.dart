@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:injectable/injectable.dart';
+import 'package:oximapp_v2/tracker/presentation/tracker_screen.dart';
 
 import '../../dashboard/presentation/home_screen.dart';
 import '../../user_register/presentation/user_register_screen.dart';
@@ -20,6 +21,7 @@ class AppRouter extends _$AppRouter {
   List<AutoRoute> get routes => [
         AutoRoute(page: UserRegisterRoute.page),
         AutoRoute(page: UserSelectionRoute.page),
+        AutoRoute(page: TrackerRoute.page),
         AutoRoute(
           page: HomeRoute.page,
           //guards: [getIt<AuthGuard>()],

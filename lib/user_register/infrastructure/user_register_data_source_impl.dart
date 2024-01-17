@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:typed_data';
+
 import 'package:injectable/injectable.dart';
 import 'package:isar/isar.dart';
 
@@ -10,9 +13,13 @@ class UserRegisterDataSourceImpl implements IUserRegisterDataSource {
   final Isar _isar;
 
   @override
-  Future<bool> registerUser({required String name}) async {
+  Future<bool> registerUser({
+    required String name,
+    String? image,
+  }) async {
     final isar = _isar;
     final newUser = User()..userName = name;
+    newUser.image = image;
     await isar.writeTxn(() => isar.users.put(newUser));
     final confirmUser = await isar.users.get(newUser.id);
     print("newUSER: $confirmUser");

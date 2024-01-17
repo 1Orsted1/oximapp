@@ -15,6 +15,18 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    HomeRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const HomeScreen(),
+      );
+    },
+    TrackerRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const TrackerScreen(),
+      );
+    },
     UserRegisterRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -27,13 +39,35 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const UserSelectionScreen(),
       );
     },
-    HomeRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const HomeScreen(),
-      );
-    },
   };
+}
+
+/// generated route for
+/// [HomeScreen]
+class HomeRoute extends PageRouteInfo<void> {
+  const HomeRoute({List<PageRouteInfo>? children})
+      : super(
+          HomeRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'HomeRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [TrackerScreen]
+class TrackerRoute extends PageRouteInfo<void> {
+  const TrackerRoute({List<PageRouteInfo>? children})
+      : super(
+          TrackerRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'TrackerRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -60,20 +94,6 @@ class UserSelectionRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'UserSelectionRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [HomeScreen]
-class HomeRoute extends PageRouteInfo<void> {
-  const HomeRoute({List<PageRouteInfo>? children})
-      : super(
-          HomeRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'HomeRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

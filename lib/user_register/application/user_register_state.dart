@@ -7,6 +7,7 @@ class UserRegisterState with _$UserRegisterState {
     required bool operationCompleted,
     required String errorMessage,
     required String userName,
+    Uint8List? image,
   }) = _UserRegisterState;
 
   factory UserRegisterState.initial() => const UserRegisterState(
@@ -14,5 +15,6 @@ class UserRegisterState with _$UserRegisterState {
         operationCompleted: false,
         errorMessage: "",
         userName: "",
+        image: null,
       );
 }
